@@ -8,21 +8,21 @@ The packages generated with this **conanfile** can be found on [bintray](https:/
 
 | Bintray | Travis | Appveyor |
 |---------|--------|----------|
-|[ ![Download](https://api.bintray.com/packages/zimmerk/conan/cpr%3Azimmerk/images/download.svg) ](https://bintray.com/zimmerk/conan/cpr%3Azimmerk/_latestVersion)|[![Build Status](https://travis-ci.org/AtaLuZiK/conan-cpr.svg?branch=release%2F1.3.0)](https://travis-ci.org/AtaLuZiK/conan-cpr)|[![Build status](https://ci.appveyor.com/api/projects/status/ncg95wrenqsy08wn/branch/release/1.3.0?svg=true)](https://ci.appveyor.com/project/AtaLuZiK/conan-cpr/branch/release/1.3.0)|
+|[ ![Download](https://api.bintray.com/packages/zimmerk/conan/cpr%3Azimmerk/images/download.svg) ](https://bintray.com/zimmerk/conan/cpr%3Azimmerk/_latestVersion)|[![Build Status](https://travis-ci.org/AtaLuZiK/conan-cpr.svg?branch=release%2F1.3.1-rc)](https://travis-ci.org/AtaLuZiK/conan-cpr)|[![Build status](https://ci.appveyor.com/api/projects/status/ncg95wrenqsy08wn/branch/release/1.3.1-rc?svg=true)](https://ci.appveyor.com/project/AtaLuZiK/conan-cpr/branch/release/1.3.1-rc)|
 
 ## Reuse the packages
 
 ### Basic setup
 
 ```
-conan install cpr/1.3.0@zimmerk/stable
+conan install cpr/1.3.1-rc@zimmerk/stable
 ```
 
 ### Project setup
 
 ```
 [requires]
-cpr/1.3.0@zimmerk/stable
+cpr/1.3.1-rc@zimmerk/stable
 
 [options]
 # Take a look for all avaliable options in conanfile.py

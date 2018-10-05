@@ -6,7 +6,8 @@ from conans import CMake, ConanFile, tools
 
 class CprConan(ConanFile):
     name = "cpr"
-    version = "1.3.0"
+    version = "1.3.1-rc"
+    cpr_version = "1.3.0"
     license = "MIT License"
     url = "https://github.com/whoshuu/cpr"
     description = "C++ Requests is a simple wrapper around libcurl inspired by the excellent Python Requests project."
@@ -23,10 +24,10 @@ class CprConan(ConanFile):
 
     @property
     def zip_folder_name(self):
-        return "%s-%s" % (self.name, self.version)
+        return "%s-%s" % (self.name, self.cpr_version)
 
     def source(self):
-        zip_name = "%s.tar.gz" % self.version
+        zip_name = "%s.tar.gz" % self.cpr_version
         tools.download("https://github.com/whoshuu/cpr/archive/%s" % zip_name, zip_name)
         tools.check_md5(zip_name, "f9df0c649208b06dd314699b4eb43759")
         tools.unzip(zip_name)
@@ -39,6 +40,7 @@ conan_basic_setup()''')
             tools.replace_in_file('cpr/CMakeLists.txt', 'add_library(${CPR_LIBRARIES}', 'add_library(${CPR_LIBRARIES} STATIC')
             tools.replace_in_file('cpr/CMakeLists.txt', '${CURL_INCLUDE_DIRS}', '${CONAN_INCLUDE_DIRS_LIBCURL}')
             tools.replace_in_file('cpr/CMakeLists.txt', '${CURL_LIBRARIES}', '${CONAN_LIBS_LIBCURL}')
+            tools.replace_in_file('cpr/util.cpp', 'std::string::value_type', 'unsigned char')
 
     def build(self):
         cmake = CMake(self)
